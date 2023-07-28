@@ -69,7 +69,6 @@ public class CountryRest {
             return getResponse(Response.Status.INTERNAL_SERVER_ERROR);
         }
     }
-
     @GET
     @Path("currency/{currency}")
     public Object getByCurrency(@PathParam("currency") String currency, @QueryParam("fields") String fields) {
@@ -203,7 +202,7 @@ public class CountryRest {
 
     @GET
     @Path("regionalbloc/{regionalbloc}")
-    public Object getByRegionalBloc(@PathParam("regionalbloc") String regionalBlock, @QueryParam("fields") String fields) {
+    public Object getByRegionalBloc1(@PathParam("regionalbloc") String regionalBlock, @QueryParam("fields") String fields) {
         LOG.info("Getting by regional bloc " + regionalBlock);
         try {
             List<Country> countries = CountryService.getInstance().getByRegionalBloc(regionalBlock);
